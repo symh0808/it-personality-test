@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IT業界版性格診断 | タイプ一覧</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body id="typesPage">
+    <header class="site-header">
+      <div class="brand">IT Persona</div>
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html#hero" class="nav-link">Home</a>
+        <a href="index.html#about" class="nav-link">About</a>
+        <a href="diagnosis.html" class="nav-link">診断</a>
+        <a href="types.html" class="nav-link active">一覧</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="メニューを開く">
+        ☰
+      </button>
+    </header>
+
+    <main>
+      <section class="hero compact">
+        <div class="hero-text">
+          <p class="eyebrow">Type Catalog</p>
+          <h1>診断タイプ一覧</h1>
+          <p>16通りのタイプと日本語名称・説明を一覧できます。診断結果と照らし合わせて活用してください。</p>
+          <div class="hero-actions">
+            <a class="btn primary" href="diagnosis.html">診断を受ける</a>
+            <a class="btn ghost" href="index.html#about">診断について知る</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-heading">
+          <p class="eyebrow">List</p>
+          <h2>タイプ一覧表</h2>
+          <p>表は自動で最新のタイプ情報に同期されます。コードは T/H - W/A - R/P - C/S の順に構成されています。</p>
+        </div>
+        <div class="type-table-wrapper">
+          <table class="type-table" id="typeListTable">
+            <thead>
+              <tr>
+                <th>コード</th>
+                <th>日本語名</th>
+                <th>説明</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      &copy; 2025 IT Personality Test
+    </footer>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
