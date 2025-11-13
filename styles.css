@@ -331,6 +331,7 @@ main {
   display: flex;
   align-items: center;
   gap: 14px;
+  flex-wrap: nowrap;
 }
 
 .scale-extreme {
@@ -364,7 +365,9 @@ main {
   justify-content: space-between;
   gap: 8px;
   align-items: flex-end;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding-bottom: 6px;
 }
 
 .scale-option {
@@ -531,6 +534,31 @@ main {
 
   .buttons {
     justify-content: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .scale-row {
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .scale-row .option-group {
+    order: 1;
+    width: 100%;
+    flex: 1 1 100%;
+  }
+
+  .scale-row .scale-extreme {
+    order: 2;
+    flex: 1 1 calc(50% - 8px);
+    text-align: left;
+    margin-top: 4px;
+  }
+
+  .scale-row .scale-extreme:last-of-type {
+    text-align: right;
   }
 }
 
