@@ -1,91 +1,534 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>IT業界版性格診断 | ホーム</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <header class="site-header">
-      <div class="brand">IT Persona</div>
-      <nav class="nav-links" id="navLinks">
-        <a href="#hero" class="nav-link">Home</a>
-        <a href="#about" class="nav-link">About</a>
-        <a href="diagnosis.html" class="nav-link">診断</a>
-        <a href="types.html" class="nav-link">一覧</a>
-      </nav>
-      <button class="nav-toggle" id="navToggle" aria-label="メニューを開く">
-        ☰
-      </button>
-    </header>
+<head>
+  <meta charset="UTF-8" />
+  <title>IT性格診断 | IT Personality Test</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <div class="site-title">IT Personality Test</div>
 
-    <main>
-      <section id="hero" class="hero">
-        <div class="hero-text">
-          <p class="eyebrow">For IT Professionals</p>
-          <h1>ITで働く<br>あなたのスタイルを<br>16問で可視化</h1>
-          <p>
-            技術志向か人志向か。計画派かアジャイル派か。<br>IT業界に特化した4つの軸であなたのスタイルを診断します。
-          </p>
-          <div class="hero-actions">
-            <a class="btn primary" href="diagnosis.html">診断を試す</a>
-            <a class="btn ghost" href="#about">しくみを見る</a>
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+      <label for="nav-toggle" class="hamburger">
+        <span></span><span></span><span></span>
+      </label>
+
+      <nav>
+        <a href="#top">HOME</a>
+        <a href="#quiz">診断</a>
+        <a href="#types">タイプ一覧</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- 診断エリア -->
+    <section id="quiz-section">
+      <h1>IT Personality Test</h1>
+      <p class="lead">
+        ITエンジニア・IT職向けの16タイプ診断です。全16問に答えると、あなたのタイプと4つの軸の傾向がわかります。
+      </p>
+
+      <div class="box">
+        <div class="small-heading">答え方</div>
+        <p class="note">
+          各質問について、
+          <strong>左が「そう思わない」</strong>、
+          <strong>右が「そう思う」</strong> です。<br />
+          深く考えすぎず、
+          <strong>直感で</strong> 選んでください。<br />
+          できるだけ真ん中（どちらともいえない）は避けて、
+          どちらかに寄せて選んでみましょう。
+        </p>
+      </div>
+
+      <section id="quiz" class="box">
+        <div class="step-header">
+          <div class="step-label" id="step-label">STEP 1 / 4</div>
+          <div class="step-progress" id="step-progress">質問 1〜4 / 全16問</div>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-bar-inner" id="progress-bar-inner"></div>
+        </div>
+
+        <!-- STEP 1: T/H -->
+        <div class="step" id="step-0">
+          <div class="question">
+            <div class="question-text">
+              1. 技術的な仕組みや構造を理解することにワクワクする。
+            </div>
+            <div class="scale-row">
+              <div class="scale-label">そう思わない</div>
+              <div class="scale-inputs">
+                <!-- name="q1" value=1..7 -->
+                <!-- label+span でクリックしやすく -->
+                <label>
+                  <input type="radio" name="q1" value="1" />
+                  <span>1</span>
+                </label>
+                <label>
+                  <input type="radio" name="q1" value="2" />
+                  <span>2</span>
+                </label>
+                <label>
+                  <input type="radio" name="q1" value="3" />
+                  <span>3</span>
+                </label>
+                <label>
+                  <input type="radio" name="q1" value="4" />
+                  <span>4</span>
+                </label>
+                <label>
+                  <input type="radio" name="q1" value="5" />
+                  <span>5</span>
+                </label>
+                <label>
+                  <input type="radio" name="q1" value="6" />
+                  <span>6</span>
+                </label>
+                <label>
+                  <input type="radio" name="q1" value="7" />
+                  <span>7</span>
+                </label>
+              </div>
+              <div class="scale-label">そう思う</div>
+            </div>
+          </div>
+
+          <div class="question">
+            <div class="question-text">
+              2. 新しい技術やツールを試すことが好きだ。
+            </div>
+            <div class="scale-row">
+              <div class="scale-label">そう思わない</div>
+              <div class="scale-inputs">
+                <label><input type="radio" name="q2" value="1" /><span>1</span></label>
+                <label><input type="radio" name="q2" value="2" /><span>2</span></label>
+                <label><input type="radio" name="q2" value="3" /><span>3</span></label>
+                <label><input type="radio" name="q2" value="4" /><span>4</span></label>
+                <label><input type="radio" name="q2" value="5" /><span>5</span></label>
+                <label><input type="radio" name="q2" value="6" /><span>6</span></label>
+                <label><input type="radio" name="q2" value="7" /><span>7</span></label>
+              </div>
+              <div class="scale-label">そう思う</div>
+            </div>
+          </div>
+
+          <div class="question">
+            <div class="question-text">
+              3. 人の気持ちや状況より、技術的に正しいかどうかを優先しがちだ。
+            </div>
+            <div class="scale-row">
+              <div class="scale-label">そう思わない</div>
+              <div class="scale-inputs">
+                <label><input type="radio" name="q3" value="1" /><span>1</span></label>
+                <label><input type="radio" name="q3" value="2" /><span>2</span></label>
+                <label><input type="radio" name="q3" value="3" /><span>3</span></label>
+                <label><input type="radio" name="q3" value="4" /><span>4</span></label>
+                <label><input type="radio" name="q3" value="5" /><span>5</span></label>
+                <label><input type="radio" name="q3" value="6" /><span>6</span></label>
+                <label><input type="radio" name="q3" value="7" /><span>7</span></label>
+              </div>
+              <div class="scale-label">そう思う</div>
+            </div>
+          </div>
+
+          <div class="question">
+            <div class="question-text">
+              4. ユーザーよりも「どう作るか」を先に考えることが多い。
+            </div>
+            <div class="scale-row">
+              <div class="scale-label">そう思わない</div>
+              <div class="scale-inputs">
+                <label><input type="radio" name="q4" value="1" /><span>1</span></label>
+                <label><input type="radio" name="q4" value="2" /><span>2</span></label>
+                <label><input type="radio" name="q4" value="3" /><span>3</span></label>
+                <label><input type="radio" name="q4" value="4" /><span>4</span></label>
+                <label><input type="radio" name="q4" value="5" /><span>5</span></label>
+                <label><input type="radio" name="q4" value="6" /><span>6</span></label>
+                <label><input type="radio" name="q4" value="7" /><span>7</span></label>
+              </div>
+              <div class="scale-label">そう思う</div>
+            </div>
           </div>
         </div>
-        <div class="hero-card">
-          <p>4つの軸</p>
-          <ul>
-            <li>T / H：技術志向 or 人・価値志向</li>
-            <li>W / A：長期計画 or 短期反復</li>
-            <li>R / P：理論優先 or 実践優先</li>
-            <li>C / S：変化志向 or 安定志向</li>
-          </ul>
+
+        <!-- STEP 2: W/A -->
+        <div class="step" id="step-1" style="display:none;">
+          <div class="question">
+            <div class="question-text">
+              5. 全体の計画やロードマップを立ててから進めたい。
+            </div>
+            <div class="scale-row">
+              <div class="scale-label">そう思わない</div>
+              <div class="scale-inputs">
+                <label><input type="radio" name="q5" value="1" /><span>1</span></label>
+                <label><input type="radio" name="q5" value="2" /><span>2</span></label>
+                <label><input type="radio" name="q5" value="3" /><span>3</span></label>
+                <label><input type="radio" name="q5" value="4" /><span>4</span></label>
+                <label><input type="radio" name="q5" value="5" /><span>5</span></label>
+                <label><input type="radio" name="q5" value="6" /><span>6</span></label>
+                <label><input type="radio" name="q5" value="7" /><span>7</span></label>
+              </div>
+              <div class="scale-label">そう思う</div>
+            </div>
+          </div>
+
+          <div class="question">
+            <div class="question-text">
+              6. 長期的な方針や構造を決めるのが好きだ。
+            </div>
+            <div class="scale-row">
+              <div class="scale-label">そう思わない</div>
+              <div class="scale-inputs">
+                <label><input type="radio" name="q6" value="1" /><span>1</span></label>
+                <label><input type="radio" name="q6" value="2" /><span>2</span></label>
+                <label><input type="radio" name="q6" value="3" /><span>3</span></label>
+                <label><input type="radio" name="q6" value="4" /><span>4</span></label>
+                <label><input type="radio" name="q6" value="5" /><span>5</span></label>
+                <label><input type="radio" name="q6" value="6" /><span>6</span></label>
+                <label><input type="radio" name="q6" value="7" /><span>7</span></label>
+              </div>
+              <div class="scale-label">そう思う</div>
+            </div>
+          </div>
+
+          <div class="question">
+            <div class="question-text">
+              7. 短いサイクルで動きながら試すより、じっくり進めたい。
+            </div>
+            <div class="scale-row">
+              <div class="scale-label">そう思わない</div>
+              <div class="scale-inputs">
+                <label><input type="radio" name="q7" value="1" /><span>1</span></label>
+                <label><input type="radio" name="q7" value="2" /><span>2</span></label>
+                <label><input type="radio" name="q7" value="3" /><span>3</span></label>
+                <label><input type="radio" name="q7" value="4" /><span>4</span></label>
+                <label><input type="radio" name="q7" value="5" /><span>5</span></label>
+                <label><input type="radio" name="q7" value="6" /><span>6</span></label>
+                <label><input type="radio" name="q7" value="7" /><span>7</span></label>
+              </div>
+              <div class="scale-label">そう思う</div>
+            </div>
+          </div>
+
+          <div class="question">
+            <div class="question-text">
+              8. 仕様は事前に固まっていないと不安になる。
+            </div>
+            <div class="scale-row">
+              <div class="scale-label">そう思わない</div>
+              <div class="scale-inputs">
+                <label><input type="radio" name="q8" value="1" /><span>1</span></label>
+                <label><input type="radio" name="q8" value="2" /><span>2</span></label>
+                <label><input type="radio" name="q8" value="3" /><span>3</span></label>
+                <label><input type="radio" name="q8" value="4" /><span>4</span></label>
+                <label><input type="radio" name="q8" value="5" /><span>5</span></label>
+                <label><input type="radio" name="q8" value="6" /><span>6</span></label>
+                <label><input type="radio" name="q8" value="7" /><span>7</span></label>
+              </div>
+              <div class="scale-label">そう思う</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 3: R/P -->
+        <div class="step" id="step-2" style="display:none;">
+          <div class="question">
+            <div class="question-text">
+              9. まず理屈や原理を理解してから動きたい。
+            </div>
+            <div class="scale-row">
+              <div class="scale-label">そう思わない</div>
+              <div class="scale-inputs">
+                <label><input type="radio" name="q9" value="1" /><span>1</span></label>
+                <label><input type="radio" name="q9" value="2" /><span>2</span></label>
+                <label><input type="radio" name="q9" value="3" /><span>3</span></label>
+                <label><input type="radio" name="q9" value="4" /><span>4</span></label>
+                <label><input type="radio" name="q9" value="5" /><span>5</span></label>
+                <label><input type="radio" name="q9" value="6" /><span>6</span></label>
+                <label><input type="radio" name="q9" value="7" /><span>7</span></label>
+              </div>
+              <div class="scale-label">そう思う</div>
+            </div>
+          </div>
+
+          <div class="question">
+            <div class="question-text">
+              10. モデルや概念を把握しないと気持ち悪いと感じる。
+            </div>
+            <div class="scale-row">
+              <div class="scale-label">そう思わない</div>
+              <div class="scale-inputs">
+                <label><input type="radio" name="q10" value="1" /><span>1</span></label>
+                <label><input type="radio" name="q10" value="2" /><span>2</span></label>
+                <label><input type="radio" name="q10" value="3" /><span>3</span></label>
+                <label><input type="radio" name="q10" value="4" /><span>4</span></label>
+                <label><input type="radio" name="q10" value="5" /><span>5</span></label>
+                <label><input type="radio" name="q10" value="6" /><span>6</span></label>
+                <label><input type="radio" name="q10" value="7" /><span>7</span></label>
+              </div>
+              <div class="scale-label">そう思う</div>
+            </div>
+          </div>
+
+          <div class="question">
+            <div class="question-text">
+              11. 手を動かす前に、頭の中で整理しておきたい。
+            </div>
+            <div class="scale-row">
+              <div class="scale-label">そう思わない</div>
+              <div class="scale-inputs">
+                <label><input type="radio" name="q11" value="1" /><span>1</span></label>
+                <label><input type="radio" name="q11" value="2" /><span>2</span></label>
+                <label><input type="radio" name="q11" value="3" /><span>3</span></label>
+                <label><input type="radio" name="q11" value="4" /><span>4</span></label>
+                <label><input type="radio" name="q11" value="5" /><span>5</span></label>
+                <label><input type="radio" name="q11" value="6" /><span>6</span></label>
+                <label><input type="radio" name="q11" value="7" /><span>7</span></label>
+              </div>
+              <div class="scale-label">そう思う</div>
+            </div>
+          </div>
+
+          <div class="question">
+            <div class="question-text">
+              12. 「なぜそうなるのか」を理解しないと前に進みにくい。
+            </div>
+            <div class="scale-row">
+              <div class="scale-label">そう思わない</div>
+              <div class="scale-inputs">
+                <label><input type="radio" name="q12" value="1" /><span>1</span></label>
+                <label><input type="radio" name="q12" value="2" /><span>2</span></label>
+                <label><input type="radio" name="q12" value="3" /><span>3</span></label>
+                <label><input type="radio" name="q12" value="4" /><span>4</span></label>
+                <label><input type="radio" name="q12" value="5" /><span>5</span></label>
+                <label><input type="radio" name="q12" value="6" /><span>6</span></label>
+                <label><input type="radio" name="q12" value="7" /><span>7</span></label>
+              </div>
+              <div class="scale-label">そう思う</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 4: C/S + 年齢・性別 -->
+        <div class="step" id="step-3" style="display:none;">
+          <div class="question">
+            <div class="question-text">
+              13. 現状を見ると「もっと良くできるのでは？」と自然に考える。
+            </div>
+            <div class="scale-row">
+              <div class="scale-label">そう思わない</div>
+              <div class="scale-inputs">
+                <label><input type="radio" name="q13" value="1" /><span>1</span></label>
+                <label><input type="radio" name="q13" value="2" /><span>2</span></label>
+                <label><input type="radio" name="q13" value="3" /><span>3</span></label>
+                <label><input type="radio" name="q13" value="4" /><span>4</span></label>
+                <label><input type="radio" name="q13" value="5" /><span>5</span></label>
+                <label><input type="radio" name="q13" value="6" /><span>6</span></label>
+                <label><input type="radio" name="q13" value="7" /><span>7</span></label>
+              </div>
+              <div class="scale-label">そう思う</div>
+            </div>
+          </div>
+
+          <div class="question">
+            <div class="question-text">
+              14. 新しい方法・技術への切り替えに抵抗がない。
+            </div>
+            <div class="scale-row">
+              <div class="scale-label">そう思わない</div>
+              <div class="scale-inputs">
+                <label><input type="radio" name="q14" value="1" /><span>1</span></label>
+                <label><input type="radio" name="q14" value="2" /><span>2</span></label>
+                <label><input type="radio" name="q14" value="3" /><span>3</span></label>
+                <label><input type="radio" name="q14" value="4" /><span>4</span></label>
+                <label><input type="radio" name="q14" value="5" /><span>5</span></label>
+                <label><input type="radio" name="q14" value="6" /><span>6</span></label>
+                <label><input type="radio" name="q14" value="7" /><span>7</span></label>
+              </div>
+              <div class="scale-label">そう思う</div>
+            </div>
+          </div>
+
+          <div class="question">
+            <div class="question-text">
+              15. 改善や改革の提案を積極的に行いたい。
+            </div>
+            <div class="scale-row">
+              <div class="scale-label">そう思わない</div>
+              <div class="scale-inputs">
+                <label><input type="radio" name="q15" value="1" /><span>1</span></label>
+                <label><input type="radio" name="q15" value="2" /><span>2</span></label>
+                <label><input type="radio" name="q15" value="3" /><span>3</span></label>
+                <label><input type="radio" name="q15" value="4" /><span>4</span></label>
+                <label><input type="radio" name="q15" value="5" /><span>5</span></label>
+                <label><input type="radio" name="q15" value="6" /><span>6</span></label>
+                <label><input type="radio" name="q15" value="7" /><span>7</span></label>
+              </div>
+              <div class="scale-label">そう思う</div>
+            </div>
+          </div>
+
+          <div class="question">
+            <div class="question-text">
+              16. 仕組みや習慣を変えることにワクワクする。
+            </div>
+            <div class="scale-row">
+              <div class="scale-label">そう思わない</div>
+              <div class="scale-inputs">
+                <label><input type="radio" name="q16" value="1" /><span>1</span></label>
+                <label><input type="radio" name="q16" value="2" /><span>2</span></label>
+                <label><input type="radio" name="q16" value="3" /><span>3</span></label>
+                <label><input type="radio" name="q16" value="4" /><span>4</span></label>
+                <label><input type="radio" name="q16" value="5" /><span>5</span></label>
+                <label><input type="radio" name="q16" value="6" /><span>6</span></label>
+                <label><input type="radio" name="q16" value="7" /><span>7</span></label>
+              </div>
+              <div class="scale-label">そう思う</div>
+            </div>
+          </div>
+
+          <!-- <div class="age-gender-row">
+            <div class="field">
+              <label for="age">年齢（任意）</label>
+              <select id="age" name="age">
+                <option value="">選択してください</option>
+                <option value="under20">20歳未満</option>
+                <option value="20-24">20〜24歳</option>
+                <option value="25-29">25〜29歳</option>
+                <option value="30-34">30〜34歳</option>
+                <option value="35-39">35〜39歳</option>
+                <option value="40plus">40歳以上</option>
+              </select>
+            </div>
+            <div class="field">
+              <span>性別（任意）</span>
+              <div class="radio-group">
+                <label><input type="radio" name="gender" value="" checked />回答しない</label>
+                <label><input type="radio" name="gender" value="male" />男性</label>
+                <label><input type="radio" name="gender" value="female" />女性</label>
+                <label><input type="radio" name="gender" value="other" />その他</label>
+              </div>
+            </div>
+          </div> -->
+        </div>
+
+        <div class="actions">
+          <button id="nextBtn" disabled>次へ</button>
+          <button id="result-btn" style="display:none;">診断結果を見る</button>
         </div>
       </section>
+    </section>
 
-      <section id="about" class="section">
-        <div class="section-heading">
-          <p class="eyebrow">About</p>
-          <h2>IT業界版性格診断とは？</h2>
-          <p>
-            現場の声をもとに、IT業務における意思決定や価値観を4つの指標で整理した独自診断です。
-            プロジェクト内での役割調整やキャリア検討のヒントになります。
-          </p>
+    <!-- 結果エリア -->
+    <section id="result-section">
+      <!-- <div class="result-header">
+        <div class="result-code" id="result-code"></div>
+        <div class="result-name" id="result-name"></div>
+        <p class="result-desc" id="result-desc"></p>
+        <div class="share-row">
+          <button type="button" class="share-btn" id="share-x">X（旧Twitter）でシェア</button>
+          <button type="button" class="share-btn" id="share-copy">URLをコピー</button>
         </div>
-        <div class="info-grid">
-          <article class="info-card">
-            <h3>短時間で完了</h3>
-            <p>全16問、5段階評価でサクッと回答。診断時間は約3分です。</p>
-          </article>
-          <article class="info-card">
-            <h3>IT文脈に最適化</h3>
-            <p>質問文はすべてIT業界のカルチャーを想定して設計しています。</p>
-          </article>
-          <article class="info-card">
-            <h3>比較が簡単</h3>
-            <p>4軸それぞれのスコアを可視化。チーム内での共有にも使えます。</p>
-          </article>
-          <article class="info-card">
-            <h3>無料で利用可</h3>
-            <p>ブラウザだけで完結し、アカウント登録も不要です。</p>
-          </article>
+      </div> -->
+
+      <div class="box">
+        <div class="small-heading">4つの軸のバランス</div>
+
+        <div class="axis-block" data-axis="TH">
+          <div class="axis-title">
+            興味の向き：技術志向（T） vs 人・価値志向（H）
+          </div>
+          <div class="axis-bar">
+            <div class="axis-bar-inner"></div>
+          </div>
+          <div class="axis-percent-row">
+            <span><strong id="TH-left-label">T</strong> <span id="TH-left-percent">0%</span></span>
+            <span><strong id="TH-right-label">H</strong> <span id="TH-right-percent">0%</span></span>
+          </div>
         </div>
-      </section>
 
-      <section class="section">
-        <div class="cta-card">
-          <h2>診断ページでさっそく試してみましょう</h2>
-          <p>ボタンを押すと診断専用ページに移動します。結果は即座に表示されます。</p>
-          <a class="btn primary" href="diagnosis.html">診断ページへ</a>
+        <div class="axis-block" data-axis="WA">
+          <div class="axis-title">
+            進め方：計画重視（W） vs 反復重視（A）
+          </div>
+          <div class="axis-bar">
+            <div class="axis-bar-inner"></div>
+          </div>
+          <div class="axis-percent-row">
+            <span><strong id="WA-left-label">W</strong> <span id="WA-left-percent">0%</span></span>
+            <span><strong id="WA-right-label">A</strong> <span id="WA-right-percent">0%</span></span>
+          </div>
         </div>
-      </section>
-    </main>
 
-    <footer class="site-footer">
-      &copy; 2025 IT Personality Test
-    </footer>
+        <div class="axis-block" data-axis="RP">
+          <div class="axis-title">
+            考え方：理解優先（R） vs 実践優先（P）
+          </div>
+          <div class="axis-bar">
+            <div class="axis-bar-inner"></div>
+          </div>
+          <div class="axis-percent-row">
+            <span><strong id="RP-left-label">R</strong> <span id="RP-left-percent">0%</span></span>
+            <span><strong id="RP-right-label">P</strong> <span id="RP-right-percent">0%</span></span>
+          </div>
+        </div>
 
-    <script src="script.js" defer></script>
-  </body>
+        <div class="axis-block" data-axis="CS">
+          <div class="axis-title">
+            志向性：変化志向（C） vs 安定志向（S）
+          </div>
+          <div class="axis-bar">
+            <div class="axis-bar-inner"></div>
+          </div>
+          <div class="axis-percent-row">
+            <span><strong id="CS-left-label">C</strong> <span id="CS-left-percent">0%</span></span>
+            <span><strong id="CS-right-label">S</strong> <span id="CS-right-percent">0%</span></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="three-cols">
+        <div>
+          <div class="three-cols-section-title">このタイプの強み</div>
+          <ul id="strengths-list"></ul>
+        </div>
+        <div>
+          <div class="three-cols-section-title">注意したいポイント</div>
+          <ul id="cautions-list"></ul>
+        </div>
+        <div>
+          <div class="three-cols-section-title">向いている仕事・役割</div>
+          <ul id="roles-list"></ul>
+        </div>
+      </div>
+
+      <div class="disclaimer">
+        本診断は、IT業界における働き方や思考の傾向を、楽しく自己理解のきっかけにしていただくためのツールです。<br />
+        ・医学的・心理学的な診断を行うものではありません。<br />
+        ・科学的な正確性や完全性を保証するものではありません。<br />
+        ・採用・評価・配置などの重要な判断を、本診断の結果だけで行うことはお控えください。<br />
+        あくまで「自分の傾向を考えるヒント」としてご利用ください。
+      </div>
+
+      <div class="center-actions">
+        <button type="button" id="restart-btn">もう一度診断する</button>
+      </div>
+    </section>
+
+    <!-- タイプ一覧へのアンカー用（中身は今後拡張） -->
+    <section id="types"></section>
+  </main>
+
+  <footer>
+    <span>IT Personality Test © 2025 Yuma Matoba. All rights reserved.</span>
+  </footer>
+
+  
+  <script src="index.js"></script>
+</body>
 </html>

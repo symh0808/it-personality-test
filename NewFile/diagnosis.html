@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IT業界版性格診断 | 質問ページ</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body id="diagnosisPage">
+    <header class="site-header">
+      <div class="brand">IT Persona</div>
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html#hero" class="nav-link">Home</a>
+        <a href="index.html#about" class="nav-link">About</a>
+        <a href="diagnosis.html" class="nav-link active">診断</a>
+        <a href="types.html" class="nav-link">一覧</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="メニューを開く">
+        ☰
+      </button>
+    </header>
+
+    <main>
+      <section class="hero compact">
+        <div class="hero-text">
+          <p class="eyebrow">Diagnosis</p>
+          <h1>診断スタート</h1>
+           <div class="scale-hint">
+            <strong>回答形式</strong>
+            <p>左に並ぶ丸ほど「そう思わない」、右に行くほど「そう思う」。<br>7段階の丸から直感で選んでください。</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="quiz-card" id="quizWrapper">
+          <div class="quiz-head">
+            <p class="step-indicator" id="stepIndicator">STEP 1 / 4</p>
+            <h3 id="sectionTitle">セクション 1</h3>
+            <p class="axis-description" id="sectionHint">4問すべてに回答すると次へ進めます。</p>
+          </div>
+         
+          <div id="questions"></div>
+          <div class="buttons">
+            <button class="btn ghost" id="prevBtn">前のセクションへ</button>
+            <button class="btn primary" id="nextBtn" disabled>次のセクションへ</button>
+          </div>
+          <div class="result-panel" id="result">
+            <p class="result-code" id="resultCode"></p>
+            <p class="type-name" id="typeName"></p>
+            <p class="type-desc" id="typeDesc"></p>
+            <h4 id="resultTitle"></h4>
+            <p id="resultDesc"></p>
+            <div class="axes-breakdown" id="axesBreakdown"></div>
+            <a class="btn ghost result-link" href="types.html">タイプ一覧を見る</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      &copy; 2025 IT Personality Test
+    </footer>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
